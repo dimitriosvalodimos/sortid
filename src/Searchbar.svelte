@@ -56,7 +56,6 @@
     const fetchedData = await fetchRedditData(inputText);
     inputText = "";
     const entriesToDisplay = getNFormattedEntries(fetchedData, 6);
-    console.log(entriesToDisplay);
     dispatcher("displaydata", entriesToDisplay);
   };
 </script>
