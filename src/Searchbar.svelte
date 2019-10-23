@@ -41,7 +41,7 @@
 
     while (validEntries < numOfEntries) {
       const currentEntry = totalEntries.data.children[index];
-      if (currentEntry.thumbnail != "") {
+      if (currentEntry.data.thumbnail != "self") {
         index++;
         validEntries++;
         relevant.push(getImportantDatapoints(currentEntry));
@@ -56,6 +56,7 @@
     const fetchedData = await fetchRedditData(inputText);
     inputText = "";
     const entriesToDisplay = getNFormattedEntries(fetchedData, 6);
+    console.log(entriesToDisplay);
     dispatcher("displaydata", entriesToDisplay);
   };
 </script>
