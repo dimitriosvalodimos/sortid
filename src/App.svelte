@@ -2,7 +2,6 @@
   import Header from "./Header.svelte";
   import Searchbar from "./Searchbar.svelte";
   import Card from "./Card.svelte";
-  import RadioButtonRow from "./RadioButtonRow.svelte";
 
   let topRow = [];
   let bottomRow = [];
@@ -27,18 +26,10 @@
   #bottomRow {
     margin-bottom: 3rem;
   }
-
-  .radio-button-row {
-    text-align: center;
-    margin: -2rem;
-  }
 </style>
 
 <Header />
 <Searchbar on:displaydata={dataSplitter} />
-<div class="radio-button-row">
-  <RadioButtonRow class="radioButtonRow" />
-</div>
 <div id="topRow" class="cardRow">
   {#if topRow.length > 0}
     {#each topRow as post}
