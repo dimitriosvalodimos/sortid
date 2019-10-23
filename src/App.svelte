@@ -2,6 +2,7 @@
   import Header from "./Header.svelte";
   import Searchbar from "./Searchbar.svelte";
   import Card from "./Card.svelte";
+  import RadioButtonRow from "./RadioButtonRow.svelte";
 
   let topRow = [];
   let bottomRow = [];
@@ -18,15 +19,27 @@
 </script>
 
 <style>
-  div {
+  .cardRow {
     display: flex;
     justify-content: space-around;
+  }
+
+  #bottomRow {
+    margin-bottom: 3rem;
+  }
+
+  .radio-button-row {
+    text-align: center;
+    margin: -2rem;
   }
 </style>
 
 <Header />
 <Searchbar on:displaydata={dataSplitter} />
-<div>
+<div class="radio-button-row">
+  <RadioButtonRow class="radioButtonRow" />
+</div>
+<div id="topRow" class="cardRow">
   {#if topRow.length > 0}
     {#each topRow as post}
       <Card
@@ -39,7 +52,7 @@
     {/each}
   {/if}
 </div>
-<div>
+<div id="bottomRow" class="cardRow">
   {#if bottomRow.length > 0}
     {#each bottomRow as post}
       <Card

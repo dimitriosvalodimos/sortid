@@ -26,8 +26,8 @@
   img {
     padding: 2rem 0;
   }
-  h3 {
-    padding: 0.5rem;
+  h4 {
+    padding: 0 1rem;
   }
 
   hr {
@@ -39,6 +39,6 @@
 <div class="card">
   <img src={preview} alt="" on:click={openLink} />
   <hr />
-  <h3>{title}</h3>
+  <h4>{title}</h4>
   <!-- <hr /> -->
 </div>
