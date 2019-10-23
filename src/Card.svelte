@@ -40,5 +40,5 @@
   <img src={preview} alt="" on:click={openLink} />
   <hr />
   <h3>{title}</h3>
-  <hr />
+  <!-- <hr /> -->
 </div>

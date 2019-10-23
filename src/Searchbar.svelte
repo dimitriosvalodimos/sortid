@@ -5,6 +5,13 @@
 
   let inputText;
 
+  const checkKey = e => {
+    if (e.keyCode === 13) {
+      e.preventDefault();
+      process();
+    }
+  };
+
   const fetchRedditData = async subredditName => {
     if (subredditName) {
       const uri = `https://www.reddit.com/r/${subredditName}.json`;
@@ -34,7 +41,8 @@
 
     while (validEntries < numOfEntries) {
       const currentEntry = totalEntries.data.children[index];
-      if (currentEntry !== "self") {
+      console.log(currentEntry);
+      if (currentEntry.thumbnail != "") {
         index++;
         validEntries++;
         relevant.push(getImportantDatapoints(currentEntry));
@@ -75,6 +83,7 @@
   <input
     type="text"
     bind:value={inputText}
-    placeholder="Enter subreddit name here..." />
+    placeholder="Enter subreddit name here..."
+    on:keyup={checkKey} />
   <button type="submit" on:click={process}>Submit</button>
 </div>
