@@ -22,7 +22,7 @@
       preview: entry.data.thumbnail,
       upvotes: entry.data.ups,
       comments: entry.data.num_comments,
-      url: entry.data.permalink
+      url: entry.data.url
     };
   };
 
@@ -49,6 +49,7 @@
     const fetchedData = await fetchRedditData(inputText);
     inputText = "";
     const entriesToDisplay = getNFormattedEntries(fetchedData, 6);
+    console.log(entriesToDisplay);
     dispatcher("displaydata", entriesToDisplay);
   };
 </script>
@@ -56,6 +57,7 @@
 <style>
   .searcharea {
     text-align: center;
+    margin: 2rem;
   }
 
   input {
