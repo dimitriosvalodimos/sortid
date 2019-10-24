@@ -1,4 +1,6 @@
 <script>
+  import { fly } from "svelte/transition";
+
   export let title;
   export let author;
   export let preview;
@@ -21,7 +23,6 @@
     margin-top: 2rem;
     margin-bottom: 2rem;
     position: relative;
-    animation: slide-down 1.5s ease;
   }
 
   img {
@@ -35,22 +36,10 @@
     color: lightgray;
     width: 75%;
   }
-
-  @keyframes slide-down {
-    0% {
-      opacity: 0;
-      transform: translateY(-20px);
-    }
-    100% {
-      opacity: 1;
-      transform: translateY(0);
-    }
-  }
 </style>
 
-<div class="card">
+<div class="card" transition:fly={{ y: 50, duration: 1000 }}>
   <img src={preview} alt="" on:click={openLink} />
   <hr />
   <h4>{title}</h4>
-  <!-- <hr /> -->
 </div>
