@@ -21,6 +21,7 @@
     margin-top: 2rem;
     margin-bottom: 2rem;
     position: relative;
+    animation: slide-down 1.5s ease;
   }
 
   img {
@@ -33,6 +34,17 @@
   hr {
     color: lightgray;
     width: 75%;
+  }
+
+  @keyframes slide-down {
+    0% {
+      opacity: 0;
+      transform: translateY(-20px);
+    }
+    100% {
+      opacity: 1;
+      transform: translateY(0);
+    }
   }
 </style>
 
